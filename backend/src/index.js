@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import connectDB from './lib/db.js';
 import userRoutes from './routes/user.routes.js';
 import authRoutes from './routes/auth.routes.js';
 import songsRoutes from './routes/songs.routes.js';
@@ -11,6 +12,8 @@ import statsRoutes from './routes/stats.routes.js';
 dotenv.config();
 
 const app = express();
+
+connectDB();
 
 const PORT = process.env.PORT || 8080;
 
